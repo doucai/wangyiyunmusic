@@ -21,16 +21,12 @@
 另感谢：https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=%E7%81%B5%E6%84%9F%E6%9D%A5%E8%87%AA  接口提供。
 
 > A Vue.js project
-
 # install dependencies
 npm install
-
 # serve with hot reload at localhost:8080
 npm run dev
-
 # build for production with minification
 npm run build
 
-```
 
 
