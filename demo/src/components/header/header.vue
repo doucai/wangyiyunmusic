@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header">
-        <img src="../assets/logo.png" alt=""> <span class="header-span">下载App</span>
+        <img src="../../assets/logo.png" alt=""> <span class="header-span">下载App</span>
         </div>
         <header-Nav></header-Nav>
     </div>
