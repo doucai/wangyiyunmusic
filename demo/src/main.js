@@ -7,7 +7,7 @@ import "./assets/reset.css"
 import fastClick from "fastclick"
 import axios from "axios"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-
+import $ from 'jquery'  
 Vue.config.productionTip = false
 // 引入fastClick解决300ms延迟
 fastClick.attach(document.body)

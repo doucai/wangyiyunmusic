@@ -1,12 +1,18 @@
 <template>
-    <div class="header">
-       <img src="../assets/logo.png" alt=""> <span class="header-span">下载App</span>
+    <div>
+        <div class="header">
+        <img src="../assets/logo.png" alt=""> <span class="header-span">下载App</span>
+        </div>
+        <header-Nav></header-Nav>
     </div>
 </template>
 
 <script>
+import headerNav from "./headernav"
 export default {
-
+    components: {
+        headerNav
+    }
 }
 </script>
 
@@ -42,4 +48,5 @@ export default {
         font-size .3rem
         text-align center
         border 1px solid rgba(255,255,255,.3)
+    
 </style>
