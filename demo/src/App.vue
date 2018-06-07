@@ -1,14 +1,21 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
+     <!-- header -->
+        <Home-Header></Home-Header>
+        <p class="kong"></p>
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
   </div>
 </template>
 
 <script>
+import HomeHeader from "@/components/header/header"
 export default {
-  name: 'App'
+  name: 'App',
+   components: {
+        HomeHeader
+    }
 }
 </script>
 
@@ -17,5 +24,9 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.kong{
+  height: 2.1rem;
+  overflow: hidden;
 }
 </style>

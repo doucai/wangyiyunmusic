@@ -1,59 +1,16 @@
 <template>
     <div class="headernav">
         <div  class="header-div">
-           <p index="1" @click="colorP1Red">推荐音乐</p>
-           <p index="2" @click="colorP2Red">热歌榜</p>
-           <p index="3" @click="colorP3Red">搜索</p>
+           <router-link tag="p" class="p1"  to="/">推荐音乐</router-link>
+           <router-link tag="p" class="p2" to="/hotmusic">热歌榜</router-link>
+           <router-link tag="p" class="p3" to="/hotsearch">搜索</router-link>
        </div>
     </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        colorP1Red(){
-            $(".header-div p").eq(0).css({
-                "color":"red",
-                "border-bottom":"2px solid red"
-            });
-            $(".header-div p").eq(1).css({
-               "color":"#000000",
-               "border-bottom":""
-            });
-            $(".header-div p").eq(2).css({
-                "color":"#000000",
-                "border-bottom":""
-            })
-        },
-        colorP2Red(){
-            $(".header-div p").eq(0).css({
-                "color":"#000000",
-                "border-bottom":""
-            });
-            $(".header-div p").eq(1).css({
-               "color":"red",
-               "border-bottom":"2px solid red"
-            });
-            $(".header-div p").eq(2).css({
-                "color":"#000000",
-                "border-bottom":""
-            })
-        },
-        colorP3Red(){
-           $(".header-div p").eq(0).css({
-                "color":"#000000",
-                "border-bottom":""
-            });
-            $(".header-div p").eq(1).css({
-               "color":"#000000",
-               "border-bottom":""
-            });
-            $(".header-div p").eq(2).css({
-                "color":"red",
-                "border-bottom":"2px solid red"
-            })
-        }
-    }
+  
 }
 </script>
 
