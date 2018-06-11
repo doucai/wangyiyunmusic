@@ -8,7 +8,6 @@
         </keep-alive>
   </div>
 </template>
-
 <script>
 import HomeHeader from "@/components/header/header"
 export default {
@@ -18,9 +17,7 @@ export default {
     }
 }
 </script>
-
 <style>
-
 .kong{
   height: 2.1rem;
   overflow: hidden;
