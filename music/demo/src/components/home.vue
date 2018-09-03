@@ -1,6 +1,6 @@
 <template>
   <div class="Vhome">
-     <i class="iconfont">&#xe66a;</i>
+     
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
         }
     },
     created () {
-        this.getAxiosData()
+        
     },
     methods: {
         getAxiosData(){
