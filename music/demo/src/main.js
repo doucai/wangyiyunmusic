@@ -3,16 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import "./assets/reset.css"
-import fastClick from "fastclick"
-import axios from "axios"
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import $ from 'jquery'  
-Vue.config.productionTip = false
-// 引入fastClick解决300ms延迟
-fastClick.attach(document.body)
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+import axios from 'axios'
+import fastckick from 'fastclick'
+import Vant from 'vant'
+import 'vant/lib/vant-css/index.css'
+import './assets/main.css'
+import Public from './assets/public.js'
+
+
+Vue.use(Vant).use(Public)
 Vue.prototype.$http = axios
+Vue.config.productionTip = false
+fastckick.attach(document.body)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -20,11 +22,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-
-
-
-
-
-
-

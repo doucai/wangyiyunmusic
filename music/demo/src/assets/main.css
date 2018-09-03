@@ -1,0 +1,30 @@
+html,body,ul,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,form {margin: 0;padding: 0;}
+ul,li {list-style-type: none;list-style: none;}
+a{text-decoration: none;}
+img {border: 0;}
+table{border-collapse:collapse;border-spacing:0;}
+html,body {margin: 0 auto;font-size: 0.6074rem;font-family: "微软雅黑","宋体" !important;font-weight: normal;}
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;font-size: 0;}
+.clearfix {*zoom: 1;} 
+.nowrap{
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2; /** 显示的行数 **/
+  overflow: hidden;  /** 隐藏超出的内容 **/
+}
+
+@font-face {font-family: 'iconfont';
+  src: url('./fontcss/iconfont.eot');
+  src: url('./fontcss/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('./fontcss/iconfont.woff') format('woff'),
+  url('./fontcss/iconfont.ttf') format('truetype'),
+  url('./fontcss/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size: 0.6074rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;}

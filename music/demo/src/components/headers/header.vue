@@ -1,15 +1,15 @@
 <template>
-    <div>
-
+    <div class="Vheader">
+        
     </div>
 </template>
 
 <script>
 export default {
-
+    name:'Vheader'
 }
 </script>
 
-<style csoped>
+<style scoped>
 
 </style>
