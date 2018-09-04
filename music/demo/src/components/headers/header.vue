@@ -25,12 +25,12 @@
         <!-- 导航 -->
         <transition enter-active-class="fadeInLeft" leave-active-class="fadeOutLeft">
             <div class="Vnav animated bounce"  v-if="show">
-                <ul>
-                    <li v-for="item of 100">{{item}}</li>
-                </ul>
+                <div>
+                    <Nav></Nav>
+                </div>
                 <p  @click="show =!show" ></p>
             </div>
-          </transition>
+        </transition>
     </div>
 </template>
 
@@ -38,20 +38,21 @@
 import Tuijian from '../tuijian/tuijian'
 import Friends from '../friends/friends'
 import Diantai from '../diantai/diantai'
+import Nav from './nav'
 export default {
     name:'Vheader',
     data () {
         return {
             active: 0,
             titles:['推荐','朋友','电台'],
-            show:false
+            show:true
         }
     },
     methods: {
      
     },
     components: {
-        Tuijian,Friends,Diantai
+        Tuijian,Friends,Diantai,Nav
     }
 }
 </script>
@@ -80,9 +81,10 @@ export default {
     overflow-y: scroll;
     z-index: 999;
 }
-.Vnav ul{
+.Vnav div{
     width: 7rem;
     float: left;
+    height: 100%;
     background: #fff;
 }
 .Vnav p{
