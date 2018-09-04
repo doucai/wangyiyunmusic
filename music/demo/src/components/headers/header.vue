@@ -45,11 +45,8 @@ export default {
         return {
             active: 0,
             titles:['推荐','朋友','电台'],
-            show:true
+            show:false
         }
-    },
-    methods: {
-     
     },
     components: {
         Tuijian,Friends,Diantai,Nav

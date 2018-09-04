@@ -92,7 +92,6 @@ export default {
         var that =this;
         this.$http.get('api/top/album?offset=0&limit=10').then(function(data){
             that.album=data.data.albums
-            console.log(that.album)
         })
    }
   }
