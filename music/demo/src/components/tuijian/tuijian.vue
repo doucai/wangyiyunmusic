@@ -41,11 +41,12 @@
         </van-row>
 
         <!-- 新碟上架 -->
-        <ul class="newAlbum">
-            <li v-for="(item,index) of album" :key="index">
+        <ul class="newAlbum ">
+            <li class="clearfix" v-for="(item,index) of album" :key="index">
                 <img :src="item.picUrl" alt="">
                 <div>
-
+                    <p class="nowrap">歌曲名：{{item.name}}</p>
+                    <p>版本类型：{{item.subType}}</p>
                 </div>
             </li>
         </ul>
@@ -143,10 +144,21 @@ h6{
     color: #000;
 }
 /* 新碟 */
-.newAlbum{
-    margin: 0.4rem 0.1rem; 
-}
 .newAlbum img{
     width: 30%;
+}
+.newAlbum li{
+    width: 100%;
+    margin: 0.4rem 0.1rem; 
+}
+.newAlbum li img{
+    float: left;
+    width: 3rem;
+}
+.newAlbum li div{
+    width: 6rem;
+    margin:auto 0.5rem;
+    float: left;
+    font-size: 0.35rem;
 }
 </style>
