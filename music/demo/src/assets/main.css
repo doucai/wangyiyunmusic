@@ -3,7 +3,7 @@ ul,li {list-style-type: none;list-style: none;}
 a{text-decoration: none;}
 img {border: 0;}
 table{border-collapse:collapse;border-spacing:0;}
-html,body {margin: 0 auto;font-size: 0.6074rem;font-family: "微软雅黑","宋体" !important;font-weight: normal;}
+html,body {overflow: auto;height: 100%;margin: 0 auto;font-size: 0.6074rem;font-family: "微软雅黑","宋体" !important;font-weight: normal;}
 .clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;font-size: 0;}
 .clearfix {*zoom: 1;} 
 .nowrap{
@@ -13,7 +13,6 @@ html,body {margin: 0 auto;font-size: 0.6074rem;font-family: "微软雅黑","宋�
   -webkit-line-clamp: 2; /** 显示的行数 **/
   overflow: hidden;  /** 隐藏超出的内容 **/
 }
-
 
 @font-face {font-family: 'iconfont';
   src: url('./fontcss/iconfont.eot');

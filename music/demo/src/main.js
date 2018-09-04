@@ -9,7 +9,7 @@ import Vant from 'vant'
 import 'vant/lib/vant-css/index.css'
 import './assets/main.css'
 import Public from './assets/public.js'
-
+import 'vue2-animate/dist/vue2-animate.min.css';
 
 Vue.use(Vant).use(Public)
 Vue.prototype.$http = axios

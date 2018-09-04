@@ -2,7 +2,7 @@
     <div class="Vheader">
         <!-- 顶部导航 -->
         <van-row type="flex" justify="space-around">
-            <van-col span="4"><i class="iconfont">&#xe662;</i></van-col>
+            <van-col span="4"><i class="iconfont" @click="show = !show">&#xe662;</i></van-col>
             <van-col class="center" span="10">
                 <van-row type="flex" justify="space-around">
                     <van-col class="iconfont" span="6">&#xe619;</van-col>
@@ -21,6 +21,16 @@
                 <Diantai v-else="index == 2"></Diantai>
             </van-tab>
         </van-tabs>
+
+        <!-- 导航 -->
+        <transition enter-active-class="fadeInLeft" leave-active-class="fadeOutLeft">
+            <div class="Vnav animated bounce"  v-if="show">
+                <ul>
+                    <li v-for="item of 100">{{item}}</li>
+                </ul>
+                <p  @click="show =!show" ></p>
+            </div>
+          </transition>
     </div>
 </template>
 
@@ -33,8 +43,12 @@ export default {
     data () {
         return {
             active: 0,
-            titles:['推荐','朋友','电台']
+            titles:['推荐','朋友','电台'],
+            show:false
         }
+    },
+    methods: {
+     
     },
     components: {
         Tuijian,Friends,Diantai
@@ -57,4 +71,27 @@ export default {
 .Vheader .van-col.right{
     text-align: right;
 }
+.Vnav{
+    position: fixed;
+    left: 0rem;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 999;
+}
+.Vnav ul{
+    width: 7rem;
+    float: left;
+    background: #fff;
+}
+.Vnav p{
+    position: fixed;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    float: left;
+    background:rgba(0, 0, 0, 0.5);
+}
+
 </style>
