@@ -7,8 +7,10 @@
         left-arrow
         @click-left="onClickLeft"
         @click-right="onClickRight"
+        fixed
         />
-      <van-search
+      <div class="pos">
+          <van-search
         v-model="value"
         placeholder="请输入搜索关键词"
         show-action
@@ -16,6 +18,8 @@
         >
         <div slot="action" @click="onSearch">搜索</div>
       </van-search>
+      </div>
+    <p style="height:2.4rem;"></p>
         <van-cell-group v-for="item of songsData">
           <van-cell @click="playSong(item.id)" :value="item.name" />
         </van-cell-group>
@@ -61,6 +65,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.pos{
+    width: 10rem;
+    position: fixed;
+    left: 0;
+    top: 1.2rem;
+    z-index: 999;
+}
 </style>
