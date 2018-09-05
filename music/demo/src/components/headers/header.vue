@@ -10,9 +10,8 @@
                     <van-col class="iconfont" span="6">&#xe61e;</van-col>
                 </van-row>
             </van-col>
-            <van-col class="right" span="4"><i class="right iconfont">&#xe63a;</i></van-col>
+            <van-col class="right" span="4"><i @click="serch" class="right iconfont">&#xe63a;</i></van-col>
         </van-row>
-
         <!-- 页面导航 -->
         <van-tabs v-model="active">
             <van-tab v-for="(item,index) of titles" :title="item">
@@ -47,6 +46,11 @@ export default {
             titles:['推荐','朋友','电台'],
             show:false
         }
+    },
+    methods: {
+      serch(){
+          this.$router.push('/search')
+      }  
     },
     components: {
         Tuijian,Friends,Diantai,Nav

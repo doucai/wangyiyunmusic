@@ -9,9 +9,8 @@
         <!-- 导航 -->
         <ul>
             <li>
-                <router-link to="">
-                    <i class="iconfont">&#xe793;</i>
-                    我的消息
+                <router-link to=""><i class="iconfont">&#xe793;</i>
+                我的消息
                 </router-link>
             </li>
             <li>

@@ -8,10 +8,13 @@
         @click-left="onClickLeft"
         />
     <van-cell-group>
-      <van-field v-model="username" label="用户名" placeholder="请输入用户名" :aria-errormessage="istrue"/>
-      <van-field v-model="passsword" label="密码" placeholder="请输入密码" :aria-errormessage="istrue"/>
+      <van-field  v-model="phone" label="用户名" placeholder="请输入用户名" :aria-errormessage="istrue"/>
+      <van-field  v-model="passsword" label="密码" placeholder="请输入密码" :aria-errormessage="istrue"/>
     </van-cell-group>
-    <p class="btn" @click="btn">立即注册</p>
+    <p class="btn"> 
+        <van-button slot="button" size="small" type="primary"  @click="btn">立即注册</van-button>
+        <van-button slot="button" size="small" type="warning"  @click="cz">重置</van-button>
+    </p>
   </div>
 </template>
 
@@ -20,14 +23,15 @@ import { Toast } from 'vant';
   export default {
       data () {
           return {
-            username:'',
+            phone:'',
             passsword:'',
             istrue:"true"
           }
       },
       methods: {
         btn(){
-           Toast.success('注册成功');
+           this.postInfo()
+           Toast.success('500');
            this.$router.push("/")
         },
         onClickLeft() {
@@ -35,6 +39,28 @@ import { Toast } from 'vant';
         },
         onClickRight(){
             this.$router.push("/login")
+        },
+        cz(){
+            if(window.confirm("是否重置")){
+                this.phone = ""
+                this.passsword = ""
+            }
+        },
+        postInfo(){
+            this.$http({
+                url:"http://localhost:3000/login/cellphone",
+                methods:'get',
+                params:{
+                    phone:this.phone,
+                    passsword:this.passsword
+                }
+            }).then(
+                function(data){
+                    console.log(data)
+                }
+            ).catch(
+
+            )
         }
       }
   }
@@ -49,13 +75,7 @@ import { Toast } from 'vant';
     margin-bottom: 0.3rem;
 }
 .btn{
-    width: 2.5rem;
     text-align: center;
-    border: 1px solid #eee;
     margin: 0.5rem auto;
-    font-size: 0.5rem;
-    padding: 0.2rem 0;
-    font-weight: bold;
-    background: #690;
 }
 </style>

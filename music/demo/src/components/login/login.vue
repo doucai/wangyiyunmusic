@@ -8,10 +8,12 @@
         @click-left="onClickLeft"
         />
     <van-cell-group>
-      <van-field v-model="username" label="用户名" placeholder="请输入用户名" />
+      <van-field v-model="phone" label="手机号" placeholder="请输入手机号" />
       <van-field v-model="passsword" label="密码" placeholder="请输入密码"  />
     </van-cell-group>
-    <p class="btn" @click="btn">登陆</p>
+    <p class="btn">
+        <van-button slot="button"  size="small" type="primary"  @click="btn">登陆</van-button>
+    </p>
   </div>
 </template>
 
@@ -20,13 +22,14 @@ import { Toast } from 'vant';
   export default {
       data () {
           return {
-            username:'',
+            phone:'',
             passsword:'',
           }
       },
       methods: {
         btn(){
-           Toast.success('登陆成功');
+           this.postInfo()
+           Toast.success('500');
            this.$router.push("/")
         },
         onClickLeft() {
@@ -34,6 +37,27 @@ import { Toast } from 'vant';
         },
         onClickRight(){
             this.$router.push("/regist")
+        },
+        // 登陆
+        postInfo(){
+           var  postData = new URLSearchParams();
+               postData.append('phone', this.phone);    
+               postData.append('passsword', this.passsword);
+            /* let postData = this.$qs.stringify({
+                phone:this.phone,
+                passsword:this.passsword
+            }) */
+            this.$http({
+                url:"http://localhost:3000/login/cellphone",
+                methods:'get',
+                params:postData
+            }).then(function(data){
+                    console.log(data)
+                    console.log(2)
+                }
+            ).catch(
+
+            )
         }
       }
   }
@@ -48,13 +72,7 @@ import { Toast } from 'vant';
     margin-bottom: 0.3rem;
 }
 .btn{
-    width: 2.5rem;
     text-align: center;
-    border: 1px solid #eee;
     margin: 0.5rem auto;
-    font-size: 0.5rem;
-    padding: 0.2rem 0;
-    font-weight: bold;
-    background: #690;
 }
 </style>
