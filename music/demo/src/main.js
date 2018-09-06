@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/store.js'
 import axios from 'axios'
 import fastckick from 'fastclick'
 import Vant from 'vant'
@@ -18,10 +19,20 @@ Vue.use(Vant).use(Public)
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 fastckick.attach(document.body)
+// 路由响应拦截
+router.beforeEach((to,from,next)=>{
+  if(!localStorage.username && to.path =="/search"){
+    next({path:'/login'})
+  }else{
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

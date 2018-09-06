@@ -4,7 +4,8 @@
         <div class="vnavDiv">
             <p class="loginP">登录网易云</p>
             <p>320k高音质无线下载</p>
-            <p class="login" @click="goLongin">立即登录</p>
+            <p class="login" v-if="show" @click="goLongin">立即登录</p>
+            <p class="login" v-else>欢迎你：{{username}}</p>
         </div>
         <!-- 导航 -->
         <ul>
@@ -106,12 +107,22 @@ export default {
     name:'Vnav',
     data () {
         return {
-           
+           show:true,
+           username:''
         }
+    },
+    mounted () {
+        this.loginSuc()
     },
     methods: {
         goLongin(){
            this.$router.push('login')
+        },
+        loginSuc(){
+            if(localStorage.username){
+                this.show=!this.show
+                this.username=localStorage.username
+            }
         }
     }
 }

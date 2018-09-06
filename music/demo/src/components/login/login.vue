@@ -29,8 +29,10 @@ import { Toast } from 'vant';
       methods: {
         btn(){
            this.postInfo()
-           Toast.success('500');
-           this.$router.push("/")
+           localStorage.setItem('username',this.phone)
+           localStorage.setItem('passsword',this.passsword)
+           Toast.success('登录成功');
+            this.$router.push("/")
         },
         onClickLeft() {
            this.$router.go(-1)
