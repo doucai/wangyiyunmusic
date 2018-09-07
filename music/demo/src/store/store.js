@@ -5,14 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        user: false
+        user: false,
+        name:"lisi"
       },
     mutations: {
-        login(state,user){
-            state.user=user
-        },
-        loginout(state,user){
-            state.user = false
+        newarr(state,msg){
+            state.name = msg
         }
     }
 })

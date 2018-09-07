@@ -113,6 +113,7 @@ export default {
     },
     mounted () {
         this.loginSuc()
+        console.log(this.$store.state.name)
     },
     methods: {
         goLongin(){
