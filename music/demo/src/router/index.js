@@ -8,7 +8,6 @@ import playsong from '@/components/playsong/playsong'
 Vue.use(Router)
 
 export default new Router({
-  mode:'history',
   routes: [
     {
       path: '/',

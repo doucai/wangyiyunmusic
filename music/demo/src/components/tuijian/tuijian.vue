@@ -72,25 +72,25 @@ export default {
  methods: {
     getBanner(){
         var that =this;
-        this.$http.get('api/banner').then(function(data){
+        this.$http.get('http://localhost:3000/banner').then(function(data){
             that.imgUrl=data.data.banners
         })
     },
     getpersonalized(){
         var that =this;
-        this.$http.get('api/personalized').then(function(data){
+        this.$http.get('http://localhost:3000/personalized').then(function(data){
             that.personalized=data.data.result
         })
     },
     getrecommend(){
         var that =this;
-        this.$http.get('api/dj/recommend').then(function(data){
+        this.$http.get('http://localhost:3000/dj/recommend').then(function(data){
             that.recommend=data.data.djRadios
         })
     },
    getalbum(){
         var that =this;
-        this.$http.get('api/top/album?offset=0&limit=10').then(function(data){
+        this.$http.get('http://localhost:3000/top/album?offset=0&limit=10').then(function(data){
             that.album=data.data.albums
         })
    }
