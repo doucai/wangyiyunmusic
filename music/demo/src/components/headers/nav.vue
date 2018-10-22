@@ -5,7 +5,7 @@
             <p class="loginP">登录网易云</p>
             <p>320k高音质无线下载</p>
             <p class="login" v-if="show" @click="goLongin">立即登录</p>
-            <p class="login" v-else>欢迎你：{{username}}</p>
+            <p class="login nowrap1" v-else>欢迎你：{{username}}</p>
         </div>
         <!-- 导航 -->
         <ul>
@@ -93,11 +93,9 @@
 
         <!-- 底部固定 -->
         <div class="footerFixed">
-             <van-row type="flex" justify="space-around">
-                    <van-col span="8"><i class="iconfont">&#xe793;</i>夜间模式</van-col>
-                    <van-col span="6"><i class="iconfont">&#xe600;</i>设置</van-col>
-                    <van-col span="6"><i class="iconfont">&#xe604;</i>退出</van-col>
-            </van-row>
+            <span ><i class="iconfont">&#xe793;</i>夜间模式</span>
+            <span ><i class="iconfont">&#xe600;</i>设置</span>
+            <span @click="exit"><i class="iconfont">&#xe604;</i>退出</span>
         </div>
     </div> 
 </template>
@@ -124,6 +122,13 @@ export default {
                 this.show=!this.show
                 this.username=localStorage.username
             }
+        },
+        exit(){
+            localStorage.removeItem("username")
+            localStorage.removeItem("passsword")
+            this.show= true
+            this.$store.commit("newarr","lisi")
+            console.log(this.$store.state.name)
         }
     }
 }
@@ -146,7 +151,7 @@ export default {
 
 .Vnav .vnavDiv .login{
     margin: 0.3rem auto 0; 
-    width: 3rem;
+    width: 4rem;
     color: #eee;
     height: 0.7rem;
     line-height: 0.7rem;
@@ -169,7 +174,7 @@ export default {
     color: #000;
 }
 .Vnav .footerFixed{
-    width: 7rem;
+    width: 6.8rem;
     height: 1rem;
     line-height: 1rem;
     background: #fff;
@@ -177,6 +182,12 @@ export default {
     bottom: 0;
     border-top:1px solid #eee; 
     font-size: 0.35rem;
+    display: flex;
+    padding-left:0.2rem; 
+}
+.Vnav .footerFixed span{
+    flex: 1;
+    text-align: center;
 }
 .Vnav .footerFixed i{
     font-size: 0.35rem;

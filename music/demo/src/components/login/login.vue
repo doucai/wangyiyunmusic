@@ -29,7 +29,7 @@
         localStorage.setItem('username', this.phone)
         localStorage.setItem('passsword', this.passsword)
         Toast.success('登录成功');
-        this.$router.push("/")
+        this.$router.go(-1)
       },
       onClickLeft() {
         this.$router.go(-1)
